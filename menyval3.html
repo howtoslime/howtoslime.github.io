@@ -1,0 +1,86 @@
+<!-- Tala om att det är html-dokument -->
+<!DOCTYPE html>
+
+<!-- Alla element ska finnas inom html-taggen -->
+<html id="menyval3">
+<!-- I head placeras saker som inte är innehåll, tex css-filer och javascript -->
+<head>
+    <!-- Dessa 3 meta-taggar måste vara först i head för att alla tecken (åäö) och Bootstrap ska fungera korrekt -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Koppla in Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- Koppla in egen CSS-fil style.css OBS! Ha den som sista css-fil -->
+    <link rel="stylesheet" type ="text/css" href="css/style.css">
+
+    <!-- Koppla in och JQuery Bootstrap javascript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+
+ <!-- Koppla in egen JavaScript-fil funktion.js OBS! Ha den som sista js-fil -->
+    <script type="text/javascript" src="js/funktion.js"></script>
+
+   <link rel="icon" type="image/png" href="bilder/diamant.png">
+    <!-- I title skriver du titeln som webbläsarfönstret ska ha när den här sidan besöks-->
+    <title>How to slime</title>
+</head>
+
+
+<!-- I body finns allt innehåll på hemsidan -->
+<body id="sida3" ng-app="app">
+
+ <nav class="nav navbar-inverse navbar-static-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="menyval1.html">How to</a></li>
+                    <li><a href="menyval2.html">Supplies</a></li>
+                    <li><a href="menyval3.html">Contact us</a></li>
+                </ul>
+            </div>
+        </nav>
+
+            <center>  
+
+        <div class="main-content container" ng-controller="KommentarCtrl">
+            <div class="content-container">
+             <h1>Contact us</h1>
+
+             <h3>This is our commentary field.<br> Here you can ask questions about slime and more.<br> Just don´t spam ;)</h3>
+                
+            </div>
+            <div class="content-container" style="margin-top: 100px; width: 50%">
+                <form ng-submit="addComment()">
+                    <div class="form-group">
+                        <input placeholder="Nickname" type="text" id="skribent" class="form-control" ng-model="kommentar.skribent">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Your comment" type="text" id="text" class="form-control" ng-model="kommentar.text">
+                    </div>
+                    <button type="submit" class="btn btn-success">Send</button>
+                </form>
+            </div>
+
+          <br><br> <div ng-repeat="kommentar in kommentarer" class="kommentar">
+                    <p><b>{{ kommentar.skribent }}</b> {{ kommentar.text }}</p>
+                </div>
+        </div>
+
+</center>
+
+</body>
+</html>

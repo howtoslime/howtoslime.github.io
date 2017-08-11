@@ -1,0 +1,43 @@
+html, body{
+	font-family: 'Indie Flower', cursive;
+	
+}
+
+h1{
+	text-decoration: underline;
+}
+
+#hem {
+	background-color: #d6fedd;
+}
+
+#sida1 {
+	background-color: #d6fedd;
+}
+
+#sida2 {
+	background-color: white;
+}
+
+#sida3 {
+	background-color: #d6fedd;
+}
+
+.bilder2 {
+	height: 300px;
+	width: 230px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-size: 22px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+    font-size: 22px;
+}
+
+.kommentar {
+	border: 1px solid black;
+}
